@@ -1,24 +1,6 @@
 type: edu
 custom_name: String templates
 files:
-- name: src/Task.kt
-  visible: true
-  placeholders:
-  - offset: 92
-    length: 6
-    placeholder_text: TODO()
-    initial_state:
-      length: 6
-      offset: 92
-    initialized_from_dependency: false
-    selected: false
-    status: Unchecked
-    encrypted_possible_answer: '"""\d{2} $month \d{4}"""'
-  text: |
-    val month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
-
-    fun getPattern(): String = TODO()
-  learner_created: false
 - name: test/tests.kt
   visible: false
   text: |-
@@ -45,5 +27,26 @@ files:
         }
     }
   learner_created: false
-status: Unchecked
+- name: src/Task.kt
+  visible: true
+  placeholders:
+  - offset: 92
+    length: 24
+    placeholder_text: TODO()
+    initial_state:
+      length: 6
+      offset: 92
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: '"""\d{2} $month \d{4}"""'
+  text: |
+    val month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
+
+    fun getPattern(): String = TODO()
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 12 Mar 2021 00:43:48 UTC
 record: -1

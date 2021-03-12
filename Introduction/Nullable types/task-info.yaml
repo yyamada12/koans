@@ -1,36 +1,6 @@
 type: edu
 custom_name: Nullable types
 files:
-- name: src/Task.kt
-  visible: true
-  placeholders:
-  - offset: 91
-    length: 6
-    placeholder_text: TODO()
-    initial_state:
-      length: 6
-      offset: 91
-    initialized_from_dependency: false
-    selected: false
-    status: Unchecked
-    encrypted_possible_answer: |-
-      val email = client?.personalInfo?.email
-          if (email != null && message != null) {
-              mailer.sendMessage(email, message)
-          }
-  text: |
-    fun sendMessageToClient(
-            client: Client?, message: String?, mailer: Mailer
-    ) {
-        TODO()
-    }
-
-    class Client(val personalInfo: PersonalInfo?)
-    class PersonalInfo(val email: String?)
-    interface Mailer {
-        fun sendMessage(email: String, message: String)
-    }
-  learner_created: false
 - name: test/tests.kt
   visible: false
   text: |-
@@ -88,5 +58,38 @@ files:
         }
     }
   learner_created: false
-status: Unchecked
+- name: src/Task.kt
+  visible: true
+  placeholders:
+  - offset: 218
+    length: 5
+    placeholder_text: TODO()
+    initial_state:
+      length: 6
+      offset: 91
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: |-
+      val email = client?.personalInfo?.email
+          if (email != null && message != null) {
+              mailer.sendMessage(email, message)
+          }
+  text: |
+    fun sendMessageToClient(
+            client: Client?, message: String?, mailer: Mailer
+    ) {
+        TODO()
+    }
+
+    class Client(val personalInfo: PersonalInfo?)
+    class PersonalInfo(val email: String?)
+    interface Mailer {
+        fun sendMessage(email: String, message: String)
+    }
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 12 Mar 2021 05:06:26 UTC
 record: -1
