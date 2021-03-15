@@ -4,25 +4,25 @@ files:
 - name: src/Task.kt
   visible: true
   placeholders:
-  - offset: 53
-    length: 10
+  - offset: 49
+    length: 22
     placeholder_text: /* TODO */
     initial_state:
       length: 10
       offset: 53
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: 'var value: Int? = null'
-  - offset: 110
-    length: 6
+  - offset: 195
+    length: 19
     placeholder_text: TODO()
     initial_state:
       length: 6
       offset: 110
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       if (value == null) {
                       value = initializer()
@@ -65,5 +65,8 @@ files:
         }
     }
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 15 Mar 2021 10:28:38 UTC
 record: -1
