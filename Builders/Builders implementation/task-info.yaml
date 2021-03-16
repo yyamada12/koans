@@ -1,31 +1,69 @@
 type: edu
 custom_name: Builders implementation
 files:
+- name: test/Tests.kt
+  visible: false
+  text: |-
+    import org.junit.Assert
+    import org.junit.Test
+
+    class HtmlDslTest {
+        @Test(timeout = 1000)
+        fun testSample() {
+            Assert.assertEquals(
+                    "Wrong result for createTable()",
+                    "<table><tr><td></td><td></td></tr></table>",
+                    createTable().toString())
+        }
+
+        @Test(timeout = 1000)
+        fun testTable1() {
+            Assert.assertEquals(
+                    "Wrong result for 'table { tr { td {} } }'",
+                    "<table><tr><td></td></tr></table>",
+                    table { tr { td {} } }.toString()
+            )
+        }
+
+        @Test(timeout = 1000)
+        fun testTable2() {
+            Assert.assertEquals(
+                    "Wrong result for 'repeat(3) { tr { td {} } }'",
+                    "<table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table>",
+                    table {
+                        repeat(3) {
+                            tr { td {} }
+                        }
+                    }.toString()
+            )
+        }
+    }
+  learner_created: false
 - name: src/Task.kt
   visible: true
   placeholders:
   - offset: 352
-    length: 10
+    length: 30
     placeholder_text: /* TODO */
     initial_state:
       length: 10
       offset: 352
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       val tr = TR()
               tr.init()
               children += tr
-  - offset: 437
-    length: 10
+  - offset: 457
+    length: 30
     placeholder_text: /* TODO */
     initial_state:
       length: 10
       offset: 437
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: children += TD().apply(init)
   text: |-
     open class Tag(val name: String) {
@@ -70,43 +108,8 @@ files:
         //<table><tr><td></td><td></td></tr></table>
     }
   learner_created: false
-- name: test/Tests.kt
-  visible: false
-  text: |-
-    import org.junit.Assert
-    import org.junit.Test
-
-    class HtmlDslTest {
-        @Test(timeout = 1000)
-        fun testSample() {
-            Assert.assertEquals(
-                    "Wrong result for createTable()",
-                    "<table><tr><td></td><td></td></tr></table>",
-                    createTable().toString())
-        }
-
-        @Test(timeout = 1000)
-        fun testTable1() {
-            Assert.assertEquals(
-                    "Wrong result for 'table { tr { td {} } }'",
-                    "<table><tr><td></td></tr></table>",
-                    table { tr { td {} } }.toString()
-            )
-        }
-
-        @Test(timeout = 1000)
-        fun testTable2() {
-            Assert.assertEquals(
-                    "Wrong result for 'repeat(3) { tr { td {} } }'",
-                    "<table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table>",
-                    table {
-                        repeat(3) {
-                            tr { td {} }
-                        }
-                    }.toString()
-            )
-        }
-    }
-  learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 16 Mar 2021 01:52:03 UTC
 record: -1
